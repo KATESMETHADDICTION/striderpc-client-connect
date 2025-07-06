@@ -1,20 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LiveChatWidget from "./components/LiveChatWidget";
-import StaffDashboard from "./pages/StaffDashboard";
-import Legal from "./pages/Legal";
-import Index from "./pages/Index"; // <-- Import your homepage
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import FeaturedBuilds from "@/components/FeaturedBuilds";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <LiveChatWidget />
-      <Routes>
-        <Route path="/" element={<Index />} /> {/* Home route */}
-        <Route path="/staff" element={<StaffDashboard />} />
-        <Route path="/legal" element={<Legal />} />
-      </Routes>
-    </BrowserRouter>
+    <main>
+      <Hero />
+      <Services />
+      <FeaturedBuilds />
+      <About />
+      <Contact />
+      <Footer />
+    </main>
   );
-}
+};
 
 export default App;
