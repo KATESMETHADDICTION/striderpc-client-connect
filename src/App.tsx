@@ -1,20 +1,16 @@
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import FeaturedBuilds from "@/components/FeaturedBuilds";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Index from "@/pages/Index";
+import LiveChatWidget from "@/components/LiveChatWidget";
 
 const App = () => {
   return (
-    <main>
-      <Hero />
-      <Services />
-      <FeaturedBuilds />
-      <About />
-      <Contact />
-      <Footer />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+      </Routes>
+      <LiveChatWidget />
+    </Router>
   );
 };
 

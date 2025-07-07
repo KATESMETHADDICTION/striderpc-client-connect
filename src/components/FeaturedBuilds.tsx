@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,7 +6,7 @@ const FeaturedBuilds = () => {
   const builds = [
     {
       name: "Gaming Beast",
-      category: "High-End Gaming",
+      category: "High-End Gaming", 
       price: "$2,499",
       specs: ["RTX 4080", "AMD Ryzen 7 7800X3D", "32GB DDR5", "1TB NVMe SSD"],
       image: "🎮",
@@ -30,6 +29,12 @@ const FeaturedBuilds = () => {
       badge: "Best Value"
     }
   ];
+
+  const handleCustomizeBuild = (buildName: string) => {
+    // Scroll to contact section for customization
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    // You could also open a modal or redirect to a build configurator
+  };
 
   return (
     <section className="py-20 bg-slate-900">
@@ -73,7 +78,10 @@ const FeaturedBuilds = () => {
                   ))}
                 </div>
                 
-                <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white">
+                <Button 
+                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white"
+                  onClick={() => handleCustomizeBuild(build.name)}
+                >
                   Customize Build
                 </Button>
               </CardContent>

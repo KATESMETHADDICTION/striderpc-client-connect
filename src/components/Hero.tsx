@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
 
 const Hero = () => {
+  const handleBuildPC = () => {
+    // Scroll to Services section
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleGetSupport = () => {
+    // Scroll to Contact section
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden">
       {/* Animated background elements */}
@@ -28,11 +38,20 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 text-lg">
+          <Button 
+            size="lg" 
+            className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 text-lg"
+            onClick={handleBuildPC}
+          >
             Build Your PC
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          <Button size="lg" variant="outline" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-8 py-4 text-lg">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-8 py-4 text-lg"
+            onClick={handleGetSupport}
+          >
             Get Support
           </Button>
         </div>
